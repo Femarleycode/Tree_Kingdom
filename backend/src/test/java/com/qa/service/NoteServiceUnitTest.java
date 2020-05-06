@@ -27,5 +27,15 @@ public class NoteServiceUnitTest {
         return this.mapper.map(note, NoteDTO.class);
     }
 
+    @Before
+    public void setUp(){
+        this.noteList = new ArrayList<>();
+        this.testNote = new Note("Shopping list", "Beer and even more beer");
+        this.noteList.add(testNote);
+        this.testNoteWithId = new Note(testNote.getTitle(), testNote.getDescription());
+        this.testNoteWithId.setId(id);
+        this.noteDTO = this.mapToDTO(testNoteWithId);
 
+
+    }
 }
