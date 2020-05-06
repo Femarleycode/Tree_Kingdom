@@ -35,7 +35,13 @@ public class NoteServiceUnitTest {
         this.testNoteWithId = new Note(testNote.getTitle(), testNote.getDescription());
         this.testNoteWithId.setId(id);
         this.noteDTO = this.mapToDTO(testNoteWithId);
-
-
     }
+
+    @Test
+    public void getAllNotesTest(){
+        when(repository.findAll()).thenReturn(this.noteList);
+        when(this.mapper)
+    }
+
+
 }
