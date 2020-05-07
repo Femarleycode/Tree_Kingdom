@@ -24,6 +24,12 @@ public class Tree {
                     nullable = false, updatable = false)})
     private Set<Users> users = new HashSet<>();
 
+    public Tree(String treeName, String orderName, Set<Users> users) {
+        this.treeName = treeName;
+        this.orderName = orderName;
+        this.users = users;
+    }
+
     public Long getTreeId() { return treeId; }
     public void setId(Long treeId) { this.treeId = treeId; }
 
