@@ -31,26 +31,26 @@ public class TreeController {
         return new ResponseEntity<TreeDTO>(this.service.createTree(tree), HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/deleteTree/{id}")
-    public ResponseEntity<?> deleteTree(@PathVariable Long id){
-        return this.service.deleteTree(id)
+    @DeleteMapping("/deleteTree/{treeId}")
+    public ResponseEntity<?> deleteTree(@PathVariable Long treeId){
+        return this.service.deleteTree(treeId)
                 ? ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build()
                 : ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/getTreeById/{id}")
-    public ResponseEntity<TreeDTO> getTreeById(@PathVariable Long id){
-        return ResponseEntity.ok(this.service.findTreeById(id));
+    @GetMapping("/getTreeById/{treeId}")
+    public ResponseEntity<TreeDTO> getTreeById(@PathVariable Long treeId){
+        return ResponseEntity.ok(this.service.findTreeById(treeId));
     }
 
-//    @PutMapping("/updateTree/{id}")
-//    public ResponseEntity<TreeDTO> updateTree(@PathVariable Long id, @RequestBody Tree tree){
-//        return ResponseEntity.ok(this.service.updateTree(id, tree));
+//    @PutMapping("/updateTree/{treeId}")
+//    public ResponseEntity<TreeDTO> updateTree(@PathVariable Long treeId, @RequestBody Tree tree){
+//        return ResponseEntity.ok(this.service.updateTree(treeId, tree));
 //    }
 //
 //    @PutMapping("/updateTree2")
-//    public ResponseEntity<TreeDTO> updateTree2(@PathParam("id") Long id, @RequestBody Tree tree){
-//        return ResponseEntity.ok(this.service.updateTree(id, tree));
+//    public ResponseEntity<TreeDTO> updateTree2(@PathParam("treeId") Long treeId, @RequestBody Tree tree){
+//        return ResponseEntity.ok(this.service.updateTree(treeId, tree));
 //    }
 
 }
