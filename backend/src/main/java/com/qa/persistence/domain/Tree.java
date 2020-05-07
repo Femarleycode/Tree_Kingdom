@@ -19,7 +19,6 @@ public class Tree {
     public Long getTreeId() {
         return TreeId;
     }
-
     public void setId(Long treeId) {
         this.treeId = treeId;
     }
@@ -27,7 +26,6 @@ public class Tree {
     public String getTreeName() {
         return treeName;
     }
-
     public void setTreeName(String treeName) {
         this.treeName = treeName;
     }
@@ -35,7 +33,6 @@ public class Tree {
     public Long getOrderId() {
         return orderId;
     }
-
     public void setOrderId(Long orderId) {
         this.orderId = orderId;
     }
@@ -43,20 +40,36 @@ public class Tree {
     public String getOrderName() {
         return orderName;
     }
-
     public void setOrderName(String orderName) {
         this.orderName = orderName;
     }
 
+
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Tree tree = (Tree) o;
-        return treeId.equals(tree.treeId) &&
-                treeName.equals(tree.treeName) &&
-                orderId.equals(tree.orderId) &&
-                orderName.equals(tree.orderName);
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Tree other = (Tree) obj;
+        if (description == null) {
+            if (other.description != null)
+                return false;
+        } else if (!description.equals(other.description))
+            return false;
+        if (id == null) {
+            if (other.id != null)
+                return false;
+        } else if (!id.equals(other.id))
+            return false;
+        if (title == null) {
+            if (other.title != null)
+                return false;
+        } else if (!title.equals(other.title))
+            return false;
+        return true;
     }
 
     @Override
