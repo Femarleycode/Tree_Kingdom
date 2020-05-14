@@ -14,8 +14,8 @@ public class Users {
     private String username;
     private Set<Tree> treeList;
 
-    @ManyToMany(mappedBy = "userTrees", fetch = FetchType.LAZY)
-    private Set<Users> sers = new HashSet<>();
+    @ManyToMany(mappedBy = "concat", fetch = FetchType.EAGER)
+    private Set<Users> users = new HashSet<>();
 
     public Users(String username) { this.username = username; }
     public Users() {}

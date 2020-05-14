@@ -14,8 +14,8 @@ public class Tree {
     private String treeName;
     private String orderName;
 
-    @ManyToMany (fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
-    @JoinTable(name = "userTrees",
+    @ManyToMany (fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @JoinTable(name = "concat",
         joinColumns = {
             @JoinColumn(name = "treeName", referencedColumnName = "treeName",
                     nullable = false, updatable = false)},
