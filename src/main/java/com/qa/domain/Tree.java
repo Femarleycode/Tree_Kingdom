@@ -9,25 +9,28 @@ import java.util.Set;
 public class Tree {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long treeId;
     private String treeName;
     private String orderName;
 
     @ManyToMany (fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-    @JoinTable(name = "concat",
+    @JoinTable(name = "userTrees",
         joinColumns = {
             @JoinColumn(name = "treeName", referencedColumnName = "treeName",
                     nullable = false, updatable = false)},
-            inverseJoinColumns = {
-            @JoinColumn(name = "userId", referencedColumnName = "userId",
+        inverseJoinColumns = {
+            @JoinColumn(name = "username", referencedColumnName = "username",
                     nullable = false, updatable = false)})
-    private Set<Users> users = new HashSet<>();
+    private Set<Users> iuserTrees = new HashSet<>();
 
-    public Tree(String treeName, String orderName, Set<Users> users) {
+    public Tree() {
+    }
+
+    public Tree(long treeId, String treeName, String orderName) {
+        this.treeId = treeId;
         this.treeName = treeName;
         this.orderName = orderName;
-        this.users = users;
     }
 
     public Long getTreeId() { return treeId; }

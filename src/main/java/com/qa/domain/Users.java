@@ -9,16 +9,20 @@ import java.util.Set;
 public class Users {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
     private String username;
-    private Set<Tree> treeList;
+    //private Set<Tree> treeList;
 
-    @ManyToMany(mappedBy = "concat", fetch = FetchType.EAGER)
-    private Set<Users> users = new HashSet<>();
+    @ManyToMany(mappedBy = "iuserTrees", fetch = FetchType.EAGER)
+    private Set<Tree> juserTree = new HashSet<>();
 
-    public Users(String username) { this.username = username; }
     public Users() {}
+
+    public Users(Long userId, String username) {
+        this.username = username;
+        this.userId = userId;
+    }
 
     public Long getTreeId() {
         return userId;
@@ -27,14 +31,12 @@ public class Users {
         this.userId = treeId;
     }
 
-    public String getUsername() {
-        return username;
-    }
+    public String getUsername() { return username; }
     public void setUsername(String username) {
         this.username = username;
     }
 
-    public Set<Tree> getTreeList() { return treeList; }
-    public void setTreeList(Set<Tree> treeList) { this.treeList = treeList; }
+//    public Set<Tree> getTreeList() { return treeList; }
+//    public void setTreeList(Set<Tree> treeList) { this.treeList = treeList; }
 
 }
