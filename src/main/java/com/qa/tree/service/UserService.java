@@ -50,7 +50,7 @@ public class UserService {
         return this.repository.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
     }
 
-    public UserDTO updateDuck(Users user, Long id) {
+    public UserDTO updateTree(Users user, Long id) {
         Users toUpdate = this.repository.findById(id).orElseThrow(UserNotFoundException::new);
         MyBeanUtils.mergeNotNull(user, toUpdate);
         return this.mapToDTO(this.repository.save(toUpdate));
