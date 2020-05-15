@@ -1,10 +1,8 @@
-package com.qa.repo;
+package com.qa.tree.repo;
 
-import com.qa.domain.Tree;
+import com.qa.tree.domain.Tree;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 public interface TreeRepository extends JpaRepository<Tree, Long> {

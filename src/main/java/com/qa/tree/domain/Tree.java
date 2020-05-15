@@ -1,7 +1,9 @@
-package com.qa.domain;
+package com.qa.tree.domain;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -9,20 +11,17 @@ import java.util.Set;
 public class Tree {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long treeId;
     private String treeName;
     private String orderName;
 
-    @ManyToMany (fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-    @JoinTable(name = "userTrees",
-        joinColumns = {
-            @JoinColumn(name = "treeName", referencedColumnName = "treeName",
-                    nullable = false, updatable = false)},
-        inverseJoinColumns = {
-            @JoinColumn(name = "username", referencedColumnName = "username",
-                    nullable = false, updatable = false)})
-    private Set<Users> iuserTrees = new HashSet<>();
+//    @Column(name = "userTrees", unique = true)
+//    private String treeName;
+
+    @ManyToOne (targetEntity = Tree.class)
+    private Tree tree;
+
 
     public Tree() {
     }

@@ -1,4 +1,4 @@
-package com.qa.dto;
+package com.qa.tree.dto;
 
 public class TreeDTO {
 

@@ -1,4 +1,4 @@
-package com.qa;
+package com.qa.tree;
 
 import static org.junit.Assert.assertTrue;
 

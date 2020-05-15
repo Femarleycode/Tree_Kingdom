@@ -1,4 +1,4 @@
-package com.qa.domain;
+package com.qa.tree.domain;
 
 import org.junit.jupiter.api.Test;
 

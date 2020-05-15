@@ -1,7 +1,9 @@
-package com.qa.domain;
+package com.qa.tree.domain;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -12,10 +14,10 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
     private String username;
-    //private Set<Tree> treeList;
 
-    @ManyToMany(mappedBy = "iuserTrees", fetch = FetchType.EAGER)
-    private Set<Tree> juserTree = new HashSet<>();
+
+    @OneToMany(mappedBy = "iuserTrees")
+    private List<Tree> treeList = new ArrayList<>();
 
     public Users() {}
 
@@ -24,16 +26,25 @@ public class Users {
         this.userId = userId;
     }
 
-    public Long getTreeId() {
+    public Long getUserId() {
         return userId;
     }
-    public void setId(Long treeId) {
-        this.userId = treeId;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
-    public String getUsername() { return username; }
+    public String getUsername() {
+        return username;
+    }
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public List<Tree> getTreeList() {
+        return treeList;
+    }
+    public void setTreeList(List<Tree> treeList) {
+        this.treeList = treeList;
     }
 
 //    public Set<Tree> getTreeList() { return treeList; }

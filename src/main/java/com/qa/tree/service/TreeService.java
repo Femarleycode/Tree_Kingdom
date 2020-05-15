@@ -1,9 +1,9 @@
-package com.qa.service;
+package com.qa.tree.service;
 
-import com.qa.domain.Tree;
-import com.qa.dto.TreeDTO;
-import com.qa.exceptions.TreeNotFoundException;
-import com.qa.repo.TreeRepository;
+import com.qa.tree.domain.Tree;
+import com.qa.tree.dto.TreeDTO;
+import com.qa.tree.exceptions.TreeNotFoundException2;
+import com.qa.tree.repo.TreeRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,11 +37,11 @@ public class TreeService {
 
     public TreeDTO findTreeById(Long treeId){
         return this.mapToDTO(this.repo.findById(treeId)
-                .orElseThrow(TreeNotFoundException::new));
+                .orElseThrow(TreeNotFoundException2::new));
     }
 
     public TreeDTO updateTree(Long treeId, Tree tree){
-        Tree update = this.repo.findById(treeId).orElseThrow(TreeNotFoundException::new);
+        Tree update = this.repo.findById(treeId).orElseThrow(TreeNotFoundException2::new);
         update.setTreeName(tree.getTreeName());
         Tree tempTree = this.repo.save(update);
         return this.mapToDTO(tempTree);
@@ -49,7 +49,7 @@ public class TreeService {
 
     public boolean deleteTree(Long treeId){
         if(!this.repo.existsById(treeId)){
-            throw new TreeNotFoundException();
+            throw new TreeNotFoundException2();
         }
         this.repo.deleteById(treeId);
         return this.repo.existsById(treeId);

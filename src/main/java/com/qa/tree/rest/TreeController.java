@@ -1,14 +1,13 @@
-package com.qa.rest;
+package com.qa.tree.rest;
 
-import com.qa.domain.Tree;
-import com.qa.dto.TreeDTO;
-import com.qa.service.TreeService;
+import com.qa.tree.domain.Tree;
+import com.qa.tree.dto.TreeDTO;
+import com.qa.tree.service.TreeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 @RestController

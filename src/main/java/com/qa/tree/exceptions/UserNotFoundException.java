@@ -1,4 +1,4 @@
-package com.qa.exceptions;
+package com.qa.tree.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -6,5 +6,5 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import javax.persistence.EntityNotFoundException;
 
 @ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "The tree doesn't exist")
-public class TreeNotFoundException extends EntityNotFoundException {
+public class UserNotFoundException extends EntityNotFoundException {
 }
