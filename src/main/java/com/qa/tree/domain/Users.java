@@ -16,7 +16,7 @@ public class Users {
     private String username;
 
 
-    @OneToMany(mappedBy = "iuserTrees")
+    @OneToMany(mappedBy = "tree")
     private List<Tree> treeList = new ArrayList<>();
 
     public Users() {}
