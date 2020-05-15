@@ -36,7 +36,7 @@ public class UsersControllerIntegrationTest {
 
 	private ObjectMapper mapper = new ObjectMapper();
 
-	private long id;
+	private Long id;
 
 	private Users testUsers;
 

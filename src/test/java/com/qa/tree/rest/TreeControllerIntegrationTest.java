@@ -39,7 +39,7 @@ public class TreeControllerIntegrationTest {
 
 	private ObjectMapper mapper = new ObjectMapper();
 
-	private long id;
+	private Long id;
 
 	private Tree testTree;
 

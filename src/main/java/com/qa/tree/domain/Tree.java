@@ -22,7 +22,7 @@ public class Tree {
     public Tree() {
     }
 
-    public Tree(long treeId, String treeName, String orderName) {
+    public Tree(Long treeId, String treeName, String orderName) {
         this.treeId = treeId;
         this.treeName = treeName;
         this.orderName = orderName;

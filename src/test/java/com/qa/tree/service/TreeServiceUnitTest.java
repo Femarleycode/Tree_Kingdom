@@ -39,7 +39,7 @@ public class TreeServiceUnitTest {
 
 	private TreeDTO treeDTO;
 
-	final long id = 1L;
+	final Long id = 1L;
 
 	@Before
 	public void init() {
@@ -109,7 +109,7 @@ public class TreeServiceUnitTest {
 		// You NEED to configure a .equals() method in Tree.java for this to work
 		when(this.repo.save(updatedTree)).thenReturn(updatedTree);
 
-		assertEquals(updatedDTO, this.service.updateTree(newTree, this.id));
+		assertEquals(updatedDTO, this.service.updateTree(this.id, newTree));
 
 		verify(this.repo, times(1)).findById(1L);
 		verify(this.repo, times(1)).save(updatedTree);

@@ -37,7 +37,7 @@ public class TreeControllerUnitTest {
 	
 	private TreeDTO treeDTO;
 
-	final long id = 1L;
+	final Long id = 1L;
 	
 	private ModelMapper mapper = new ModelMapper();
 
@@ -94,8 +94,8 @@ public class TreeControllerUnitTest {
 	@Test
 	public void updateTreesTest() {
 		// given
-		Tree newTree = new Tree(1L, "Blue", "Treeington Manor");
-		Tree updatedTree = new Tree(newTree.getName(), newTree.getColour(), newTree.getHabitat());
+		Tree newTree = new Tree(1L, "Oak", "Fagales");
+		Tree updatedTree = new Tree(newTree.getTreeName(), newTree.getOrderName());
 		updatedTree.setId(this.id);
 
 		when(this.service.updateTree(newTree, this.id)).thenReturn(this.mapToDTO(updatedTree));
