@@ -22,7 +22,6 @@ public class Tree {
     @ManyToOne (targetEntity = Tree.class)
     private Tree tree;
 
-
     public Tree() {
     }
 

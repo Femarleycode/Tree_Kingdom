@@ -17,9 +17,7 @@ public class TreeDTO {
     public Long getId() {
         return treeId;
     }
-    public void setId(Long id) {
-        this.treeId = treeId;
-    }
+    public void setId(Long id) { this.treeId = treeId; }
 
     public String getTitle() {
         return treeName;
