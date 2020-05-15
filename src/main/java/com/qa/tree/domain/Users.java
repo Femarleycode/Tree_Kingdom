@@ -1,10 +1,7 @@
 package com.qa.tree.domain;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "Users")
@@ -50,4 +47,19 @@ public class Users {
 //    public Set<Tree> getTreeList() { return treeList; }
 //    public void setTreeList(Set<Tree> treeList) { this.treeList = treeList; }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Users users = (Users) o;
+        return userId.equals(users.userId) &&
+                username.equals(users.username) &&
+                treeList.equals(users.treeList);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId, username, treeList);
+    }
 }
