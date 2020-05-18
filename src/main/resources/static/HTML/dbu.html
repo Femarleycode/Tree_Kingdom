@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>dbu.html</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    </head>
+    <body>
+
+        <nav>
+            <div>
+                <ul class="topnav">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../html/login.html">Login Page</a></li>
+                    <li><a class="active" href="../html/dbu.html">Database Update</a></li>
+                    <li class="right"><a href="../html/about.html">About</a></li>
+                </ul>
+                <link rel="stylesheet" href="../css/style.css" />
+            </div>
+        </nav>
+
+        <header>
+            <h1>Database Update</h1>
+            <p>A place for updating the database with API calls.</p>
+        </header>
+
+
+        <article>
+            <section>
+                <form>
+                    <fieldset>
+                        <label for="treeName">Tree Name</label>
+                        <input type="text" id="treeName" name="treeName" placeholder="Tree Name">
+                        <label for="orderName">Tree Order</label>
+                        <input type="text" id="orderName" name="orderName" placeholder="Tree Order">
+                    </fieldset>
+                    <input type ="button" value="submit" id="postButton">
+                </form>
+            </section>
+            <script src="../js/apiPost.js"></script>
+        </article>
+
+    </body>
+</html>

@@ -34,12 +34,12 @@ public class TreeController {
                 : ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/getTree/{id}")
     public ResponseEntity<TreeDTO> getTree(@PathVariable Long id) {
         return ResponseEntity.ok(this.service.findTreeById(id));
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/getAllTrees")
     public ResponseEntity<List<TreeDTO>> getAllTrees() {
         return ResponseEntity.ok(this.service.readTrees());
     }

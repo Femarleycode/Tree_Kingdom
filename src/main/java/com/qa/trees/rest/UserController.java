@@ -35,12 +35,12 @@ public class UserController {
                 : ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/getUser/{id}")
     public ResponseEntity<UserDTO> getUser(@PathVariable Long id) {
         return ResponseEntity.ok(this.service.findUserById(id));
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/getAllUsers")
     public ResponseEntity<List<UserDTO>> getAllUsers() {
         return ResponseEntity.ok(this.service.readUsers());
     }
@@ -50,7 +50,7 @@ public class UserController {
         return new ResponseEntity<UserDTO>(this.service.updateUser(user, id), HttpStatus.ACCEPTED);
     }
 
-    @PatchMapping("/update/{id}")
+    @PatchMapping("/updateUser/{id}")
     public ResponseEntity<UserDTO> addTreeToUser(@PathVariable Long id, @RequestBody Trees tree) {
         return new ResponseEntity<UserDTO>(this.service.addTreeToUser(id, tree), HttpStatus.ACCEPTED);
     }
