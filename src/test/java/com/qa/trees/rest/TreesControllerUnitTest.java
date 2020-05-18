@@ -4,7 +4,6 @@ import com.qa.trees.domain.Trees;
 import com.qa.trees.dto.TreeDTO;
 import com.qa.trees.service.TreeService;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
