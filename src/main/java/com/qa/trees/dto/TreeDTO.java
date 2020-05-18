@@ -6,31 +6,42 @@ public class TreeDTO {
     private String treeName;
     private String orderName;
 
-    public TreeDTO() {
-    }
-
-    public TreeDTO(String treeName, String orderName) {
-        this.treeName = treeName;
-        this.orderName = orderName;
-    }
 
     public Long getId() {
         return treeId;
     }
-    public void setId(Long id) { this.treeId = treeId; }
+    public void setId(Long id) { this.treeId = id; }
 
-    public String getTitle() {
+    public String getTreeName() {
         return treeName;
     }
-    public void setTitle(String treeName) {
+    public void setTreeName(String treeName) {
         this.treeName = treeName;
     }
 
-    public String getDescription() {
-        return orderName;
-    }
+    public String getOrderName() { return orderName; }
     public void setDescription(String orderName) {
         this.orderName = orderName;
+    }
+
+
+    public TreeDTO(String treeName, String orderName) {
+        this.treeName = treeName;
+        this.orderName = orderName; }
+
+    public TreeDTO() {
+    }
+
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((treeName == null) ? 0 : treeName.hashCode());
+        result = prime * result + ((orderName == null) ? 0 : orderName.hashCode());
+        result = prime * result + (int) (treeId ^ (treeId >>> 32));
+        result = prime * result + ((treeName == null) ? 0 : treeName.hashCode());
+        return result;
     }
 
     @Override
@@ -60,4 +71,12 @@ public class TreeDTO {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "TreeDTO{" +
+                "treeId=" + treeId +
+                ", treeName='" + treeName + '\'' +
+                ", orderName='" + orderName + '\'' +
+                '}';
+    }
 }
