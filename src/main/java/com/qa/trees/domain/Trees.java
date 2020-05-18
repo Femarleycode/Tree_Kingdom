@@ -30,6 +30,8 @@ public class Trees {
         this.orderName = orderName;
     }
 
+
+
     public Long getId() { return treeId; }
     public void setId(Long treeId) { this.treeId = treeId; }
 
@@ -38,6 +40,9 @@ public class Trees {
 
     public String getOrderName() { return orderName; }
     public void setOrderName(String orderName) { this.orderName = orderName; }
+
+
+
 
     @Override
     public boolean equals(Object o) {

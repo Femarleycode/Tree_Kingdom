@@ -45,7 +45,7 @@ public class UsersControllerIntegrationTest {
 		this.repo.deleteAll();
 		this.testUsers = new Users("Fredrick");
 		this.testUsersWithId = this.repo.save(this.testUsers);
-		this.id = this.testUsersWithId.getId();
+		this.id = this.testUsersWithId.getUserId();
 	}
 
 	@Test
@@ -86,7 +86,7 @@ public class UsersControllerIntegrationTest {
 	public void testUpdateUsers() throws Exception {
 		Users newUsers = new Users("Amy");
 		Users updatedUsers = new Users(newUsers.getUsername());
-		updatedUsers.setId(this.id);
+		updatedUsers.setUserId(this.id);
 
 		String result = this.mock
 				.perform(request(HttpMethod.PUT, "/users/updateUsers/?id=" + this.id).accept(MediaType.APPLICATION_JSON)

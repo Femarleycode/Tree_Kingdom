@@ -46,7 +46,7 @@ public class UserService {
         return this.repo.existsById(id);
     }
 
-    public UserDTO findUserByID(Long id) {
+    public UserDTO findUserById(Long id) {
         return this.mapToDTO(this.repo.findById(id).orElseThrow(UserNotFoundException::new));
     }
 
@@ -56,7 +56,7 @@ public class UserService {
 
     public UserDTO updateUser(Users tree, Long id) {
         Users toUpdate = this.repo.findById(id).orElseThrow(UserNotFoundException::new);
-        toUpdate.setUsername(tree.getName());
+        toUpdate.setUsername(tree.getUsername());
         return this.mapToDTO(this.repo.save(toUpdate));
     }
 
@@ -67,4 +67,4 @@ public class UserService {
         return this.mapToDTO(this.repo.saveAndFlush(toUpdate));
     }
 
-}}
+}

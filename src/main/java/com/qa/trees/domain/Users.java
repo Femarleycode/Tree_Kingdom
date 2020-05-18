@@ -17,17 +17,12 @@ public class Users {
 
     public Users() {}
 
+
     public Users(Long userId, String username) {
         this.username = username;
         this.userId = userId;
     }
 
-    public String getName() {
-        return username;
-    }
-    public Long getId() {
-        return userId;
-    }
 
 
 
@@ -52,8 +47,6 @@ public class Users {
         this.treesList = treesList;
     }
 
-//    public Set<Trees> getTreeList() { return treeList; }
-//    public void setTreeList(Set<Trees> treeList) { this.treeList = treeList; }
 
 
     @Override

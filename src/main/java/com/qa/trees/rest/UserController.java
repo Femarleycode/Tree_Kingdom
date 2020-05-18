@@ -37,7 +37,7 @@ public class UserController {
 
     @GetMapping("/get/{id}")
     public ResponseEntity<UserDTO> getUser(@PathVariable Long id) {
-        return ResponseEntity.ok(this.service.findUserByID(id));
+        return ResponseEntity.ok(this.service.findUserById(id));
     }
 
     @GetMapping("/getAll")

@@ -4,6 +4,7 @@ import com.qa.trees.domain.Trees;
 import com.qa.trees.dto.TreeDTO;
 import com.qa.trees.service.TreeService;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -17,11 +18,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.mockito.Mockito.*;
 
+
+
 @RunWith(MockitoJUnitRunner.class)
 public class TreesControllerUnitTest {
+
 
 	@InjectMocks
 	private TreeController controller;
@@ -98,11 +103,11 @@ public class TreesControllerUnitTest {
 		Trees updatedTrees = new Trees(newTrees.getTreeName(), newTrees.getOrderName());
 		updatedTrees.setId(this.id);
 
-		when(this.service.updateTree(newTrees, this.id)).thenReturn(this.mapToDTO(updatedTrees));
+		when(this.service.updateTree(this.id, newTrees)).thenReturn(this.mapToDTO(updatedTrees));
 
-		assertEquals(new ResponseEntity<TreeDTO>(this.mapToDTO(updatedTrees), HttpStatus.ACCEPTED), this.controller.updateTrees(this.id, newTrees));
+		assertEquals(new ResponseEntity<TreeDTO>(this.mapToDTO(updatedTrees), HttpStatus.ACCEPTED), this.controller.updateTree(this.id, newTrees));
 
-		verify(this.service, times(1)).updateTree(newTrees, this.id);
+		verify(this.service, times(1)).updateTree(this.id, newTrees);
 	}
 
 }
