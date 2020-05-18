@@ -19,11 +19,13 @@ public class Users {
 
 
     public Users(Long userId, String username) {
-        this.username = username;
         this.userId = userId;
+        this.username = username;
     }
 
-
+    public Users(String username) {
+        this.username = username;
+    }
 
 
     public Long getUserId() {

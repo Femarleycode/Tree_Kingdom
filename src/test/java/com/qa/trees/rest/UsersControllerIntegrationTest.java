@@ -43,7 +43,7 @@ public class UsersControllerIntegrationTest {
 	@Before
 	public void init() {
 		this.repo.deleteAll();
-		this.testUsers = new Users("Fredrick");
+		this.testUsers = new Users(1L, "John");
 		this.testUsersWithId = this.repo.save(this.testUsers);
 		this.id = this.testUsersWithId.getUserId();
 	}
@@ -84,7 +84,7 @@ public class UsersControllerIntegrationTest {
 
 	@Test
 	public void testUpdateUsers() throws Exception {
-		Users newUsers = new Users("Amy");
+		Users newUsers = new Users(1L, "Sarah");
 		Users updatedUsers = new Users(newUsers.getUsername());
 		updatedUsers.setUserId(this.id);
 
