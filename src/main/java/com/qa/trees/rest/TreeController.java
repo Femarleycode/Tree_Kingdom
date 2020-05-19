@@ -23,28 +23,28 @@ public class TreeController {
         this.service = service;
     }
 
-    @PostMapping("/createTree")
+    @PostMapping("/create")
     public ResponseEntity<TreeDTO> createTree(@RequestBody Trees tree) {
         return new ResponseEntity<>(this.service.createTree(tree), HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/deleteTree/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteTree(@PathVariable Long id) {
         return this.service.deleteTree(id) ? ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build()
                 : ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/getTree/{id}")
+    @GetMapping("/get/{id}")
     public ResponseEntity<TreeDTO> getTree(@PathVariable Long id) {
         return ResponseEntity.ok(this.service.findTreeById(id));
     }
 
-    @GetMapping("/getAllTrees")
+    @GetMapping("/getAll")
     public ResponseEntity<List<TreeDTO>> getAllTrees() {
         return ResponseEntity.ok(this.service.readTrees());
     }
 
-    @PutMapping("/updateTree")
+    @PutMapping("/update")
     public ResponseEntity<TreeDTO> updateTree(@PathParam("id") Long id, @RequestBody Trees tree) {
         return new ResponseEntity<>(this.service.updateTree(id, tree), HttpStatus.ACCEPTED);
     }
