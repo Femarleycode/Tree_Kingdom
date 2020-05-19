@@ -45,7 +45,7 @@ public class TreeController {
         return ResponseEntity.ok(this.service.readTrees());
     }
 
-    @PutMapping("/update")
+    @PutMapping("/update/{id}")
     public ResponseEntity<TreeDTO> updateTree(@PathParam("id") Long id, @RequestBody Trees tree) {
         return new ResponseEntity<>(this.service.updateTree(id, tree), HttpStatus.ACCEPTED);
     }
