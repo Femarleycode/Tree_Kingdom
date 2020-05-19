@@ -43,6 +43,7 @@ public class TreeService {
     public TreeDTO updateTree(Long treeId, Trees trees){
         Trees update = this.repo.findById(treeId).orElseThrow(TreeNotFoundException2::new);
         update.setTreeName(trees.getTreeName());
+        update.setOrderName(trees.getOrderName());
         Trees tempTrees = this.repo.save(update);
         return this.mapToDTO(tempTrees);
     }

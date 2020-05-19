@@ -7,7 +7,7 @@ const postTree= () => {
 
     axios({
         method: 'post',
-        url: 'http://localhost:8181/createTree',
+        url: 'http://localhost:8181/tree/create',
         data: `{
         "treeName": "${treeName}",
         "orderName": "${orderName}"

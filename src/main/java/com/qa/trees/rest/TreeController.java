@@ -2,6 +2,7 @@ package com.qa.trees.rest;
 
 import com.qa.trees.domain.Trees;
 import com.qa.trees.dto.TreeDTO;
+import com.qa.trees.dto.UserDTO;
 import com.qa.trees.service.TreeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

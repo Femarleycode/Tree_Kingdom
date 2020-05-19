@@ -20,7 +20,7 @@ public class TreeDTO {
     }
 
     public String getOrderName() { return orderName; }
-    public void setDescription(String orderName) {
+    public void setOrderName(String orderName) {
         this.orderName = orderName;
     }
 
@@ -64,11 +64,8 @@ public class TreeDTO {
         } else if (!treeId.equals(other.treeId))
             return false;
         if (treeName == null) {
-            if (other.treeName != null)
-                return false;
-        } else if (!treeName.equals(other.treeName))
-            return false;
-        return true;
+            return other.treeName == null;
+        } else return treeName.equals(other.treeName);
     }
 
     @Override
