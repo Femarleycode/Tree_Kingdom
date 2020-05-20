@@ -10,6 +10,8 @@ The minimum viable product: A working front end (with working API calls) which c
 
 See project documents for more information.
 
+The project Kanban board can be found [here](https://trello.com/b/wl89oZFO/hobby-web-application)
+
 ## Project status
 
 Current release: v.0.2.0 - in development
