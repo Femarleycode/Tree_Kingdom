@@ -12,7 +12,7 @@ See project documents for more information.
 
 ## Project status
 
-Current release: v.0.1.0 - in development
+Current release: v.0.2.0 - in development
 
 Test coverage:
 
