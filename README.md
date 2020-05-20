@@ -4,8 +4,6 @@ My second individual project with QA as an academy trainee.
 
 This application is for tree enthusiasts who want to track which trees that they've spotted. It was built to demonstrate my understanding of Sprign and connecting to a working back-end along with front-end through API calls.
 
-##Table of contents 1. 2. 3. 4. 5. 6.
-
 ## About this project
 
 The minimum viable product: A working front end (with working API calls) which connect to a Java back-end with a relational database.
