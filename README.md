@@ -140,4 +140,6 @@ _For help in [Choosing a license](https://choosealicense.com/)_
 
 **David Williams** - _Java and Spring support_ - [DavidWilliamsQA](https://github.com/DavidWilliamsQA)
 
+**Embedded Artistry** - _Documentation templates_ - [embeddedartistry](https://github.com/embeddedartistry), the template can be found [here](https://github.com/embeddedartistry/embedded-resources/tree/master/docs)
+
 # Inventory Management System
